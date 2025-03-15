@@ -1,5 +1,6 @@
 ## Link Website
-Aplikasi Laravel ini bisa diakses di: [Satya Adil Faishal]([URL_WEBSITE](https://satyaadil.github.io/Myweb/))
+[Akses Website Saya](https://satyaadil.github.io/Myweb/)
+
 
 
 
