@@ -1,36 +1,49 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\CartController;
-use App\Http\Controllers\CheckoutController;
-use App\Http\Controllers\OrderController;
-use App\Http\Controllers\CategoryController;
 
-// Halaman Utama
 Route::get('/', function () {
     return view('welcome');
 });
 
-// Route Produk
-Route::resource('products', ProductController::class)->only(['index', 'show']);
-
-// Route Keranjang
-Route::prefix('cart')->group(function () {
-    Route::get('/', [CartController::class, 'index'])->name('cart.index');
-    Route::post('/add/{product}', [CartController::class, 'add'])->name('cart.add');
-    Route::patch('/update/{product}', [CartController::class, 'update'])->name('cart.update');
-    Route::delete('/remove/{product}', [CartController::class, 'remove'])->name('cart.remove');
+Route::get('/produk', function () {
+    return view('produk', [
+        'categories' => ['Elektronik', 'Fashion', 'Makanan', 'Kesehatan'],
+        'products' => [
+            ['name' => 'Laptop Gaming', 'price' => 'Rp15.000.000', 'image' => 'https://via.placeholder.com/300x200', 'id' => 1],
+            ['name' => 'Kaos Polos', 'price' => 'Rp100.000', 'image' => 'https://via.placeholder.com/300x200', 'id' => 2],
+            ['name' => 'Cokelat Premium', 'price' => 'Rp50.000', 'image' => 'https://via.placeholder.com/300x200', 'id' => 3]
+        ]
+    ]);
 });
 
-// Route Checkout (hanya untuk user yang login)
-Route::middleware(['auth'])->group(function () {
-    Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
-    Route::post('/checkout/process', [CheckoutController::class, 'process'])->name('checkout.process');
-
-    // Route Order History
-    Route::resource('orders', OrderController::class)->only(['index', 'show']);
+Route::get('/chekout', function () {
+    return view('chekout', [
+        'product' => request('product', ''),
+        'price' => request('price', '')
+    ]);
 });
 
-// Route Kategori
-Route::resource('categories', CategoryController::class);
+Route::get('/keranjang', function () {
+    return view('keranjang', [
+        'cart_items' => [
+            ['name' => 'Laptop Gaming', 'price' => 'Rp15.000.000', 'quantity' => 1, 'total' => 'Rp15.000.000'],
+            ['name' => 'Kaos Polos', 'price' => 'Rp100.000', 'quantity' => 2, 'total' => 'Rp200.000']
+        ],
+        'total' => 'Rp15.200.000'
+    ]);
+});
+
+Route::get('/riwayat', function () {
+    return view('riwayat', [
+        'orders' => [
+            ['id' => '#12345', 'product' => 'Laptop Gaming', 'total' => 'Rp15.000.000', 'date' => '18 Maret 2025', 'status' => 'Selesai'],
+            ['id' => '#12346', 'product' => 'Kaos Polos', 'total' => 'Rp200.000', 'date' => '17 Maret 2025', 'status' => 'Sedang Dikirim']
+        ]
+    ]);
+});
+
+
+Route::post('/process-chekout', function () {
+    return redirect('/riwayat');
+});
