@@ -1,10 +1,31 @@
-# Repository Ini Telah Rusak
+# 🚨 Pemberitahuan Penting
 
-Sayangnya, repositori ini telah rusak dan tidak lagi dapat digunakan. Sebagai gantinya, proyek ini telah dipindahkan ke repositori baru.
+> **Perhatian:**  
+> Repositori ini **sudah tidak aktif** dan **tidak lagi menerima pembaruan**.
 
-### Repositori Baru:
-[Link ke repositori baru](https://github.com/username/repository-baru)
+Terima kasih telah mengunjungi proyek ini.  
+Kami mengumumkan bahwa proyek ini telah **dipindahkan ke repositori baru** untuk pengembangan lebih lanjut yang lebih baik dan terstruktur.
 
-Kami mohon maaf atas ketidaknyamanan ini, dan silakan gunakan repositori baru untuk melanjutkan proyek ini.
+---
 
-Terima kasih atas pengertiannya!
+## 🔗 Repositori Baru
+
+👉 [SatyaAdil/Laravel-Starter](https://github.com/SatyaAdil/Laravel-Starter)
+
+Silakan kunjungi repositori baru tersebut untuk:
+- Update fitur terbaru
+- Perbaikan bug
+- Dokumentasi yang lebih lengkap
+- Dukungan penuh komunitas
+
+---
+
+## 🙏 Terima Kasih
+
+Kami mohon maaf atas ketidaknyamanan ini dan sangat menghargai dukungan Anda.  
+Mari terus berkarya, berinovasi, dan berkembang bersama!
+
+Salam hangat,  
+**Tim SatyaAdil**
+
+---
